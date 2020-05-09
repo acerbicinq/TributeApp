@@ -28,10 +28,11 @@ function loadBooks() {
           <div class="biblio-date">${biblioCard.year}</div>
           <div class="biblio-booktitle">${biblioCard.title}</div>
         </div>
+        <div id="biblioExpand" class="biblio-card-expand"><img src="./img/expand.png" alt="expand button"></div>
         <div class="biblio-expanded">
           <div class="biblio-expanded-top">
             <div class="biblio-subtitle">${biblioCard.subtitle}</div>
-            <div id="biblioMinimize" class="biblio-minimize"><svg class="biblio-minimize-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10.707 7.05L10 6.343 4.343 12l1.414 1.414L10 9.172l4.243 4.242L15.657 12z"/></svg></div>
+            <div id="biblioMinimize" class="biblio-minimize"><img src="./img/minimize.png" alt="minimize button"></div>
           </div>
           <div id="biblioSubcard" class="biblio-subcard">
             <p class="biblio-booksummary">${biblioCard.summary}</p>
@@ -76,14 +77,17 @@ function loadBooks() {
 
 const expandedTop = document.querySelector('.biblio-expanded-top');
 const expandedSubcard = document.querySelector('.biblio-subcard');
+const expandBtn = document.querySelector('.biblio-card-expand');
 
-  biblioTitle.onclick = () => {
+  biblioExpand.onclick = () => {
     expandedTop.style.display = "flex";
     expandedSubcard.style.display = "block";
+    expandBtn.style.display = "none";
   }
   biblioMinimize.onclick = () => {
     expandedTop.style.display = "none";
     expandedSubcard.style.display = "none";
+    expandBtn.style.display = "inline-flex";
   }
 
 

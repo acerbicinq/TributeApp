@@ -143,10 +143,9 @@ a:hover {
 }
 .biblio-list-item {
   display: inline-flex;
+  width: 90%;
 }
 .biblio-date {
-  border-left: none;
-  border-radius: 0 5px 5px 0;
   width: 72px;
   font-family: 'Petit Formal Script', cursive;
   font-size: 1.1em;
@@ -155,10 +154,11 @@ a:hover {
 .biblio-booktitle {
   font-family: 'Petit Formal Script', cursive;
   font-size: 1.2em;
-  margin-left: 0.5em;
+
 }
-.biblio-expanded {
-  /* border: 0.1em solid blue; */
+.biblio-card-expand {
+  display: inline-flex;
+  justify-content: flex-end;
 }
 .biblio-expanded-top {
   display: none;
@@ -172,13 +172,10 @@ a:hover {
 }
 .biblio-minimize {
   display: flex;
-  justify-content: center;
+  align-items: flex-start;
   width: 20%;
-  height: 30px;
 }
-.biblio-minimize-svg {
-  height: 25px;
-}
+
 .biblio-subcard {
   display: none;
   padding: 3%;
