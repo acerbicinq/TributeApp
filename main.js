@@ -22,74 +22,83 @@ fetch("butler.json").then(res => {
 
 const biblioItem = document.getElementById('biblioCards');
 function loadBooks() {
-  butlerBooks.forEach(biblioCard => {
-    const biblioContent = `<div id="biblioBorder" class="biblio-card-container">
-        <div id="biblioTitle" class="biblio-list-item">
-          <div class="biblio-date">${biblioCard.year}</div>
-          <div class="biblio-booktitle">${biblioCard.title}</div>
+  for (i = 0; i < butlerBooks.length; i++) {
+    const biblioContent = `<div class="biblio-card-container">
+        <div class="biblio-list-item">
+          <div class="biblio-date">${butlerBooks[i].year}</div>
+          <div class="biblio-booktitle">${butlerBooks[i].title}</div>
         </div>
-        <div id="biblioExpand" class="biblio-card-expand"><img src="./img/expand.png" alt="expand button"></div>
+        <div class="biblio-card-expand"><img src="./img/expand.png" alt="expand button"></div>
         <div class="biblio-expanded">
           <div class="biblio-expanded-top">
-            <div class="biblio-subtitle">${biblioCard.subtitle}</div>
-            <div id="biblioMinimize" class="biblio-minimize"><img src="./img/minimize.png" alt="minimize button"></div>
+            <div class="biblio-subtitle">${butlerBooks[i].subtitle}</div>
+            <div class="biblio-minimize"><img src="./img/minimize.png" alt="minimize button"></div>
           </div>
-          <div id="biblioSubcard" class="biblio-subcard">
-            <p class="biblio-booksummary">${biblioCard.summary}</p>
-              <a class="biblio-btn-link" href="${biblioCard.url}" target="_blank"><button id="biblioBtn" class="biblio-btn btn" type="button" name="button">View on Goodreads</button>
+          <div class="biblio-subcard">
+            <p class="biblio-booksummary">${butlerBooks[i].summary}</p>
+              <a class="biblio-btn-link" href="${butlerBooks[i].url}" target="_blank"><button class="biblio-btn btn" type="button" name="button">View on Goodreads</button>
           </div>
         </div>
       </div>`
 
-  biblioItem.insertAdjacentHTML('afterbegin', biblioContent);
+  biblioItem.insertAdjacentHTML('beforeEnd', biblioContent);
 
-  if (biblioCard.series === "Patternist") {
-    biblioBorder.style.border = "0.2em solid #434463";
-    biblioBorder.style.borderLeft = "12px solid #434463";
-    biblioBtn.style.backgroundColor = "#434463";
-    biblioSubcard.style.background = "rgba(67, 68, 99, 0.3)";
-  } else if (biblioCard.series === "Xenogenesis") {
-    biblioBorder.style.border = "0.2em solid #5EA878";
-    biblioBorder.style.borderLeft = "12px solid #5EA878";
-    biblioBtn.style.backgroundColor = "#5EA878";
-    biblioSubcard.style.background = "rgba(94, 168, 120, 0.3)";
-  } else if (biblioCard.series === "Earthseed") {
-    biblioBorder.style.border = "0.2em solid #5591C9";
-    biblioBorder.style.borderLeft = "12px solid #5591C9";
-    biblioBtn.style.backgroundColor = "#5591C9";
-    biblioSubcard.style.background = "rgba(85, 145, 201, 0.3)";
-  } else if (biblioCard.series === "Kindred") {
-    biblioBorder.style.border = "0.2em solid #C09A65";
-    biblioBorder.style.borderLeft = "12px solid #C09A65";
-    biblioBtn.style.backgroundColor = "#93754B";
-    biblioSubcard.style.background = "rgba(192, 154, 101, 0.3)";
-  } else if (biblioCard.series === "Fledgling") {
-    biblioBorder.style.border = "0.2em solid #5B5B5B";
-    biblioBorder.style.borderLeft = "12px solid #5B5B5B";
-    biblioBtn.style.backgroundColor = "#5B5B5B";
-    biblioSubcard.style.background = "rgba(91, 91, 91, 0.3)";
-  } else {
-    biblioBorder.style.border = "0.2em solid #C6D377";
-    biblioBorder.style.borderLeft = "12px solid #C6D377";
-    biblioBtn.style.backgroundColor = "#585C3C";
-    biblioSubcard.style.background = "rgba(198, 211, 119, 0.3)";
-  }
+  let biblioBorder = document.querySelector('.biblio-card-container');
+  const biblioBtn = document.querySelector('.biblio-btn');
+  const biblioSubcard = document.querySelector('.biblio-subcard');
 
+
+
+  console.log(biblioBorder);
+    if (butlerBooks[i].series === "Patternist") {
+      console.log('I\'m a Patternist Book!');
+      biblioBorder.classList.add("patternist-container");
+      biblioBtn.classList.add("patternist-btn");
+      biblioSubcard.classList.add("patternist-subcard");
+    } else if (butlerBooks[i].series === "Xenogenesis") {
+      console.log('I\'m a Xenogenisis Book!');
+      biblioBorder.classList.add("xeno-container");
+      biblioBtn.classList.add("xeno-btn");
+      biblioSubcard.classList.add("xeno-subcard");
+    } else if (butlerBooks[i].series === "Earthseed") {
+      console.log('I\'m an Earthseed Book!');
+      biblioBorder.classList.add("earth-container");
+      biblioBtn.classList.add("earth-btn");
+      biblioSubcard.classList.add("earth-subcard");
+    } else if (butlerBooks[i].series === "Kindred") {
+      console.log('I\'m Kindred!');
+      biblioBorder.classList.add("kin-container");
+      biblioBtn.classList.add("kin-btn");
+      biblioSubcard.classList.add("kin-subcard");
+    } else if (butlerBooks[i].series === "Fledgling") {
+      console.log('I\'m Fledgling!');
+      biblioBorder.classList.add("fledge-container");
+      biblioBtn.classList.add("fledge-btn");
+      biblioSubcard.classList.add("fledge-subcard");
+    } else {
+      console.log('I\'m Bloodchild!');
+      biblioBorder.classList.add("blood-container");
+      biblioBtn.classList.add("blood-btn");
+      biblioSubcard.classList.add("blood-subcard");
+    }
+
+
+
+
+}
 const expandedTop = document.querySelector('.biblio-expanded-top');
 const expandedSubcard = document.querySelector('.biblio-subcard');
 const expandBtn = document.querySelector('.biblio-card-expand');
+const minimizeBtn = document.querySelector('.biblio-minimize');
 
-  biblioExpand.onclick = () => {
+  expandBtn.onclick = () => {
     expandedTop.style.display = "flex";
     expandedSubcard.style.display = "block";
     expandBtn.style.display = "none";
   }
-  biblioMinimize.onclick = () => {
+  minimizeBtn.onclick = () => {
     expandedTop.style.display = "none";
     expandedSubcard.style.display = "none";
     expandBtn.style.display = "inline-flex";
   }
-
-
-  });
-}
+  };

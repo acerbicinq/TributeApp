@@ -141,6 +141,32 @@ a:hover {
   border-radius: 0 5px 5px 0;
   width: 96%;
 }
+
+.patternist-container {
+  border: 0.2em solid #434463;
+  border-left: 12px solid #434463;
+}
+.xeno-container {
+  border: 0.2em solid #5EA878;
+  border-left: 12px solid #5EA878;
+}
+.earth-container {
+  border: 0.2em solid #5591C9;
+  border-left: 12px solid #5591C9;
+}
+.kin-container {
+  border: 0.2em solid #C09A65;
+  border-left: 12px solid #C09A65;
+}
+.fledge-container {
+  border: 0.2em solid #5B5B5B;
+  border-left: 12px solid #5B5B5B;
+}
+.blood-container {
+  border: 0.2em solid #C6D377;
+  border-left: 12px solid #C6D377;
+}
+
 .biblio-list-item {
   display: inline-flex;
   width: 90%;
@@ -181,6 +207,13 @@ a:hover {
   padding: 3%;
   font-size: 0.9em;
 }
+.patternist-subcard {background: rgba(67, 68, 99, 0.3);}
+.xeno-subcard {background: rgba(94, 168, 120, 0.3);}
+.earth-subcard {background: rgba(85, 145, 201, 0.3);}
+.kin-subcard {background: rgba(192, 154, 101, 0.3);}
+.fledge-subcard {background: rgba(91, 91, 91, 0.3);}
+.blood-subcard {background: rgba(198, 211, 119, 0.3);}
+
 .biblio-booksummary {
   padding-bottom: 1em;
 }
@@ -189,6 +222,13 @@ a:hover {
   margin: 0 auto;
   width: 80%;
 }
+.patternist-btn {background-color: #434463;}
+.xeno-btn {background-color: #5EA878;}
+.earth-btn {background-color: #5591C9;}
+.kin-btn {background-color: #93754B;}
+.fledge-btn {background-color: #5B5B5B;}
+.blood-btn {background-color: #585C3C;}
+
 
 .tribute-footer {
   width: 100%;
