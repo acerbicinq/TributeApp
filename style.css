@@ -64,7 +64,7 @@ a:hover {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  flex-basis: 160px;
+  flex-basis: 33.3%;
   background-color: #303030;
   color: white;
   border-radius: 20px;
@@ -88,7 +88,6 @@ a:hover {
   left: -63px;
   top: -27px;
 }
-
 .right-separator {
   display: inline-block;
   position: relative;
@@ -100,19 +99,19 @@ a:hover {
   background-color: #EDEDED;
   width: 65%;
   font-size: 1.6em;
-
 }
+
+/* Initial Blurb */
 .tribute-img {
+  display: block;
   height: 100%;
   width: 99%;
   margin: 0 auto 1em;
 }
-
 .tribute-content-firstline {
   font-family: 'Petit Formal Script', cursive;
   font-size: 1.2em;
 }
-
 .tribute-content-paragraph {
   margin-bottom: 1em;
   margin: 0.5em;
@@ -132,6 +131,8 @@ a:hover {
   margin: 3em auto;
 }
 
+
+/* Bibliography */
 .tribute-biblio {
   display: flex;
   flex-flow: column;
@@ -141,7 +142,88 @@ a:hover {
   border-radius: 0 5px 5px 0;
   width: 96%;
 }
+.biblio-list-item {
+  display: inline-flex;
+  width: 70%;
+}
+.biblio-date {
+  width: 72px;
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 1.1em;
+  text-align: center;
+}
+.biblio-booktitle {
+  font-family: 'Petit Formal Script', cursive;
+  font-size: 1.2em;
+}
+.biblio-card-expand {
+  display: inline-flex;
+  justify-content: flex-end;
+  padding-right: 8%;
+  padding: 1.2%;
+  width: 20%;
+}
+.biblio-expanded-top {
+  display: none;
+}
+.biblio-subtitle {
+  display: flex;
+  justify-content: flex-start;
+  width: 80%;
+  padding-left: 7em;
+  font-size: 0.8em;
+}
+.biblio-minimize {
+  display: flex;
+  align-items: flex-start;
+  width: 20%;
+  padding-left: 8%;
+  padding: 1.2%;
+}
+.biblio-subcard {
+  display: none;
+  padding: 3%;
+  font-size: 0.9em;
+}
+.biblio-booksummary {
+  padding-bottom: 1em;
+}
+.biblio-btn {
+  display: block;
+  margin: 0 auto;
+  width: 80%;
+}
 
+
+/* Footer */
+.tribute-footer {
+  width: 100%;
+  height: 100px;
+}
+.back-to-top-container {
+  position: relative;
+  bottom: 2.25em;
+  margin: 0 auto;
+  background-color: #434463;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  padding: 0.5em;
+  font-size: 0.8em;
+}
+.back-to-top-container a {
+  color: white;
+}
+.back-to-top-svg {
+  display: block;
+  height: 32px;
+  width: 32px;
+  margin: 0 auto;
+  fill: white;
+}
+
+/* STATES */
+/* Conditional Styling */
 .patternist-container {
   border: 0.2em solid #434463;
   border-left: 12px solid #434463;
@@ -167,46 +249,6 @@ a:hover {
   border-left: 12px solid #C6D377;
 }
 
-.biblio-list-item {
-  display: inline-flex;
-  width: 90%;
-}
-.biblio-date {
-  width: 72px;
-  font-family: 'Petit Formal Script', cursive;
-  font-size: 1.1em;
-  text-align: center;
-}
-.biblio-booktitle {
-  font-family: 'Petit Formal Script', cursive;
-  font-size: 1.2em;
-
-}
-.biblio-card-expand {
-  display: inline-flex;
-  justify-content: flex-end;
-}
-.biblio-expanded-top {
-  display: none;
-}
-.biblio-subtitle {
-  display: flex;
-  justify-content: flex-start;
-  width: 80%;
-  padding-left: 7em;
-  font-size: 0.8em;
-}
-.biblio-minimize {
-  display: flex;
-  align-items: flex-start;
-  width: 20%;
-}
-
-.biblio-subcard {
-  display: none;
-  padding: 3%;
-  font-size: 0.9em;
-}
 .patternist-subcard {background: rgba(67, 68, 99, 0.3);}
 .xeno-subcard {background: rgba(94, 168, 120, 0.3);}
 .earth-subcard {background: rgba(85, 145, 201, 0.3);}
@@ -214,15 +256,6 @@ a:hover {
 .fledge-subcard {background: rgba(91, 91, 91, 0.3);}
 .blood-subcard {background: rgba(198, 211, 119, 0.3);}
 
-.biblio-booksummary {
-  padding-bottom: 1em;
-}
-.biblio-btn {
-  display: block;
-  margin: 0 auto;
-  width: 80%;
-
-}
 .patternist-btn {background-color: #434463;}
 .xeno-btn {background-color: #5EA878;}
 .earth-btn {background-color: #5591C9;}
@@ -230,28 +263,93 @@ a:hover {
 .fledge-btn {background-color: #5B5B5B;}
 .blood-btn {background-color: #585C3C;}
 
+/* Media Queries */
+@media screen and (min-width: 500px) {
+  .left-separator {
+    left: -140px;
+  }
+  .right-separator {
+    right: -140px;
+  }
+  .tribute-subheader {
+    width: 300px;
+  }
+  .tribute-img {
+    width: 65%;
+  }
+  .tribute-content-paragraph {
+    width: 65%;
+    margin: 0.5em auto;
+  }
+  .tribute-biblio {
+    align-items: center;
+  }
+  .biblio-card-container {
+    width: 65%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .tribute-header {
+    width: 85%;
+    display: block;
+    margin: 0 auto;
+  }
+  .tribute-navbar-btns {
+    width: 85%;
+    margin: 1em auto;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .tribute-header-h1 {
+    font-size: 6em;
+  }
+  .tribute-header-h2 {
+    font-size: 2em;
+  }
+  .tribute-navbar-btns {
+    width: 50%;
+    margin: 1em auto;
+  }
+  .l-tribute-content  {
+    margin: 0;
+  }
+  #bio {
+    display: inline-block;
+    position: sticky;
+    top: 0;
+    width: 35%;
+    background-color: #EDEDED;
+    height: 60%;
+    margin-left: 7%;
 
-.tribute-footer {
-  width: 100%;
-  height: 100px;
-}
-.back-to-top-container {
-  position: relative;
-  bottom: 2.25em;
-  margin: 0 auto;
-  background-color: #434463;
-  width: 50px;
-  border-radius: 50px;
-  padding: 0.5em;
-  font-size: 0.8em;
-}
-.back-to-top-container a {
-  color: white;
-}
-.back-to-top-svg {
-  display: block;
-  height: 32px;
-  width: 32px;
-  margin: 0 auto;
-  fill: white;
+  }
+  #biblio {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    float: right;
+    margin-right: 7%;
+  }
+  .biblio-card-container {
+    width: 80%;
+  }
+  .biblio-btn {
+    width: 30%;
+    font-size: 1em;
+  }
+  .l-main {
+    margin-bottom: 4em;
+    height: 100%;
+    overflow: hidden;
+  }
+  .back-to-top-container {
+    margin: 0 93%;
+  }
+  .left-separator {
+    display: none;
+  }
+  .right-separator {
+    display: none;
+  }
+
 }
